@@ -1,0 +1,54 @@
+\newenvironment{TemplateCodeInside}[6]
+{
+\def\leftbox{#5}
+\def\rightbox{}
+\def\framecolor{shadecolor}
+\ifstr{#4}{e}{ \def\framecolor{red} 
+               \def\rightbox{Falsch} } {}
+\ifstr{#4}{v}{ \def\framecolor{mydarkgreen} 
+               \def\rightbox{Richtig} } {}
+
+\begin{scriptsize}
+\begin{framed} 
+\ttfamily
+
+\ifstr{\leftbox} {} {
+  % Ausgabe nur, wenn rechte Box Inhalt hat, dann links mit Standardtext
+  \ifstr{\rightbox}{}{}
+  { \fbox{Quelltext} \hfill \textbf{\color{\framecolor} \fcolorbox{black}{white}{\rightbox} }
+  }
+} {
+\fbox{\leftbox}
+% und bei Bedarf zusätzlich rechts die zweite Box
+  \ifstr{\rightbox}{}{}
+  { \hfill \textbf{\color{\framecolor} \fcolorbox{black}{white}{\rightbox} }
+  } 
+}
+
+\begin{flushleft}
+}  % Ende der begin-Anweisungen, es folgen die end-Anweisungen
+{\end{flushleft}\end{framed}\end{scriptsize} }
+
+\newcommand{\TemplateCode}[9]
+% **************************************************
+{
+
+\ifstr{#1}{}{~}{
+\minisec{\normalfont \scriptsize \centering \textbf{\textit{#1}} \medskip } }
+
+\begin{scriptsize}
+
+% Code-Abschnitt mit #4
+\begin{TemplateCodeInside} {} {0pt} {0pt} {#3} {#5} {}
+#6
+\end{TemplateCodeInside}
+
+% Ausgabetext mit #4
+#4
+ 
+% #2   Fußzeile ausgeben, sofern vorgesehen
+\ifstr{#2} {} {} { \centering \textit{#2} \medskip \\ } 
+
+\end{scriptsize}
+}
+

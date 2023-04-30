@@ -1,0 +1,284 @@
+% Syntax Highlightling
+
+%\DefineShortVerb[commandchars=\\\{\}]{\|}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{\begin{scriptsize}}{\end{scriptsize}}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newcommand{\KeywordTok}[1]{\textbf{{#1}}}
+\newcommand{\DataTypeTok}[1]{\underline{{#1}}}
+\newcommand{\DecValTok}[1]{{#1}}
+\newcommand{\BaseNTok}[1]{{#1}}
+\newcommand{\FloatTok}[1]{{#1}}
+\newcommand{\ConstantTok}[1]{{#1}}
+\newcommand{\CharTok}[1]{{#1}}
+\newcommand{\SpecialCharTok}[1]{{#1}}
+\newcommand{\StringTok}[1]{{#1}}
+\newcommand{\VerbatimStringTok}[1]{{#1}}
+\newcommand{\SpecialStringTok}[1]{{#1}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textit{{#1}}}
+\newcommand{\DocumentationTok}[1]{\textit{{#1}}}
+\newcommand{\AnnotationTok}[1]{\textit{{#1}}}
+\newcommand{\CommentVarTok}[1]{\textit{{#1}}}
+\newcommand{\OtherTok}[1]{{#1}}
+\newcommand{\FunctionTok}[1]{{#1}}
+\newcommand{\VariableTok}[1]{{#1}}
+\newcommand{\ControlFlowTok}[1]{\textbf{{#1}}}
+\newcommand{\OperatorTok}[1]{{#1}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textbf{{#1}}}
+\newcommand{\AttributeTok}[1]{{#1}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textit{{#1}}}
+\newcommand{\WarningTok}[1]{\textit{{#1}}}
+\newcommand{\AlertTok}[1]{\textbf{{#1}}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+
+
+
+
+\newcommand{\myfigurewithoutcaption}[1]{{\bfseries \myfigurebabel{ }#1}}
+\newcommand{\myfigurewithcaption}[2]{{\bfseries \myfigurebabel{ }#1{\quad}}#2}
+\renewcommand{\iff}{\Longleftrightarrow}
+
+% Definition der Fussnoten
+% ------------------------
+%\KOMAoptions{footnotes=multiple}
+
+
+\DeclareTextSymbol{\textlongs}{TS1}{115} 
+
+\deffootnote[2.2em]{2.2em}{0em}{\makebox[2.2em][l]{\thefootnotemark}}
+
+\newcommand{\badchar}[1]
+{\textbf{?}}
+
+
+\newcommand{\myplainurl}[1]
+{{\ttfamily  \url{#1}}}
+
+
+\newcommand{\myfnhref}[2]
+{{#2} \^{}{\{\ttfamily  \url{#1}\}} }
+
+\newcommand{\mymchref}[2]
+{}
+
+
+\newcommand{\mytabhref}[2]
+{{#2}\protect\footnote{\ttfamily \url{#1} }}
+%{\textsc{#2}}
+
+
+\newcommand{\myfnlref}[2]
+{{#2} \^{}\{\mychapterbabel \ref{#1} \mypagebabel {$\text{}$} \pageref{#1}\}}
+
+\newlength{\fnwidth}
+\setlength{\fnwidth}{\linewidth}
+\addtolength{\fnwidth}{-10mm}
+
+\newcommand{\myhref}[2]
+{{#2}\protect\footnote{    \begin{minipage}{\fnwidth} \ttfamily \url{#1}  \end{minipage}}} 
+\renewcommand{\myhref}[2]{{#2}}
+
+\newcommand{\mylref}[2]
+{{#2}\protect\footnote{\mychapterbabel {$\text{}$} \ref{#1} \mypagebabel {$\text{}$} \pageref{#1}}}
+
+\newcommand{\myfnsref}[2]
+{\text{#2} \^{}\{\text{#1} \}}
+
+\newcommand{\mysref}[2]
+{\text{#2}\protect\footnote{#1}}
+
+\newcommand{\TickYes}{\checkmark}
+
+
+% Kompatibilität, damit myfootnote nichts ins Leere läuft
+\newcommand{\myfootnote}[1]
+%{\footnote{\quad{}#1}}
+{\footnote{#1}}
+
+
+% Auflistungen
+% ------------
+% Standardvorschlag für itemize
+%\newenvironment{myitemize}{\begin{itemize}}{\end{itemize}}
+%\newenvironment{myenumerate}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{myquote}{\begin{itemize}[{}]}{\end{itemize}}
+\newenvironment{myblockquote}{\begin{itemize}[{\quad}]}{\end{itemize}}
+
+\newenvironment{mydescription}{
+
+\begin{inparablank}}{\end{inparablank}} 
+% Alternativen ohne Einrückung
+\newenvironment{myitemize}{\begin{compactitem}[\textbullet]}{\end{compactitem}}
+\newenvironment{myenumerate}{\begin{compactenum}}{\end{compactenum}}
+
+% einige weitere Festlegungen
+% ---------------------------
+% \breakslash is used for URLs to allow linebreaking
+\newcommand{\mybreakslash}{\discretionary{/}{}{/}}
+
+\newlength{\mylength}
+\newlength{\myhight}
+\newlength{\myshadingheight}
+\newcommand{\myoverline}[1]
+{\settowidth{\mylength}{#1} \settoheight{\myhight}{#1}
+\makebox[-3pt][l]{#1}
+\rule[\myhight+1pt]{\mylength}{0.15mm}}
+
+% Teile von Büchern
+\newcommand{\mypart}[1]
+%{\part{#1}}
+{\addtocontents{toc}{\protect\vspace{7.5mm} \textbf{\Large {#1}}}}
+
+% minitoc vorbereiten, aber standardmäßig unterdrücken
+\newcommand{\myminitoc}{}
+
+% Haupttitel
+% ----------
+%\newcommand{\mymaintitle}[1]
+%{\definecolor{shadecolor}{gray}{0.9}\begin{shaded}
+%\begin{center}
+%\Huge \bfseries 
+%#1 
+%\end{center}
+%\end{shaded}}
+
+%\newcommand{\mysubtitle}[1]
+%{\begin{center}
+%\LARGE \bfseries 
+%#1
+%\end{center}}
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+  {\LARGE \@title}
+  \par\noindent\rule{\textwidth}{1pt}
+  \@author
+  \end{flushleft}\egroup
+}
+\makeatother
+
+\newcommand{\mysubtitle}[1]{\subtitle{#1}}
+\newcommand{\mymaintitle}[1]{\title{#1}}
+\newcommand{\myauthor}[1]{\author{#1}}
+
+
+% this is for getting rid of a lintian complaint about
+% the German translation of the English word resolution which
+% I can not represent here literally according to lintian
+\newcommand{\resdhunlongstring}[0]{Res}
+\newcommand{\sourcedhunlongstring}[0]{source}
+\newcommand{\redshunlongstringsource}[0]{\resdhunlongstring\sourcedhunlongstring}
+
+
+% Metadaten
+% ---------
+\newcommand{\fetchurlcaption}[0]
+{\mysref{In den Metadaten erläutert unter: {\itshape Adresse der elektronischen \redshunlongstringsource zur Abholung (O)}.}{URL zur Abholung}}
+
+\newcommand{\bookcaption}[0]
+{\mysref{In den Metadaten erläutert unter: {\itshape Adresse der elektronischen \redshunlongstringsource (O)}.}{Buch (Hauptseite)}}
+
+\newcommand{\functionalgroupcaption}[0]
+{\mysref{In den Metadaten erläutert unter: {\itshape Angaben zum Inhalt: DDC-Sachgruppe der Deutschen Nationalbibliografie oder Warengruppen-Systematik des Deutschen Buchhandels (O)}.}{Sachgruppe(n)} }
+
+\newcommand{\futhertopicscaption}[0]
+{\mysref{In den Metadaten erläutert unter: {\itshape Angaben zum Inhalt: weitere Klassifikationen / Thesauri (F)}.}{Weitere Themen}}
+
+\newcommand{\mainauthorscaption}[0]
+{Hauptautor(en)}
+
+\newcommand{\projecttexniciancaption}[0]
+{Betreuer}
+
+\newcommand{\organizationscaptions}[0]
+{\mysref{In den Metadaten erläutert unter: {\itshape Beteiligte Organisationen (F)}.}{Organisation(en)}}
+
+\newcommand{\datecaption}[0]
+{Erscheinungsdatum}
+
+\newcommand{\issuecaption}[0]
+{Ausgabebezeichnung}
+
+\newcommand{\standardcodecaption}[0]
+{Standardnummer }
+
+\newcommand{\maintitlecaption}[0]
+{Haupttitel}
+
+\newcommand{\publishercaption}[0]
+{\mysref{In den Metadaten erläutert unter: {\itshape Verlag / Verlegende Stelle (O)}.}{Verlegende Stelle} }
+
+\newcommand{\publishercitycaption}[0]
+{Verlagsort}
+
+\newcommand{\shelfcaption}[0]
+{Wikibooks-Regal}
+
+\newcommand{\sizecaption}[0]
+{Umfang}
+
+
+\newcommand{\Alpha}{\mathrm{A}}
+\newcommand{\Beta}{\mathrm{B}}
+\newcommand{\Epsilon}{\mathrm{E}}
+\newcommand{\Zeta}{\mathrm{Z}}
+\newcommand{\Eta}{\mathrm{H}}
+\newcommand{\Iota}{\mathrm{I}}
+\newcommand{\Kappa}{\mathrm{K}}
+\newcommand{\Mu}{\mathrm{M}}
+\newcommand{\Nu}{\mathrm{N}}
+\newcommand{\Rho}{\mathrm{P}}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\Chi}{\mathrm{X}}
+
+
+
+% FILL THESE IN FOR EACH PREPRINT
+\author{Firstname Lastname}
+\newcommand{\wjjournal}{WikiJournal of Foo}
+\newcommand{\wjtitle}{\wjjournal{} 20XX, 10(1):1}
+\newcommand{\wjdoi}{doi: 10.somethingsometing}
+\newcommand{\wjarticletype}{Review Article}
+\newcommand{\authorcorrespond}{name@domain.com}
+\newcommand{\authororcid}{[0000-0000-0000-0000]}
+\newcommand{\suppmat}{commons.wikimedia.org/location}
+\newcommand{\licenseunder}{CC-BY 3.0}
+\newcommand{\receiveddate}{11-11-20XX}
+
+
+\makeatletter
+
+\let\SavedFootnoterule\footnoterule
+\AtBeginShipoutFirst{\global\let\footnoterule\SavedFootnoterule}
+
+\newcommand\receivedpublished{%
+\def\footnoterule{%
+\rule{\columnwidth}{1pt}%
+}%
+\begingroup
+\long\def\@makefntext##1{%
+\parindent \z@
+\noindent
+##1}%
+\footnotetext{%
+\begin{tabular}{>{\textbf}l l}
+\textbf{Author correspondence}: \authorcorrespond\\
+\textbf{ORCID}: \authororcid\\
+\textbf{Supplementary material:} \suppmat\\
+\textbf{Licensed under:} \licenseunder\\
+\textbf{Received} \receiveddate\\
+\end{tabular}%
+}%
+\endgroup
+}
+\makeatother

@@ -1,0 +1,814 @@
+\newcommand{\LaTeXJa}{Ja}
+\newcommand{\LaTeXNein}{Nein}
+\newcommand{\wbtempcolora}{white}
+\newcommand{\wbtempcolorb}{white}
+\newcommand{\wbtempcolorc}{white}
+\newcommand{\wbtemptexta}{}
+\newcommand{\wbtemptextb}{}
+\newcommand{\wbtemptextc}{}
+\newlength{\wbtemplengtha}
+\setlength{\wbtemplengtha}{0pt}
+\newlength{\wbtemplengthb}
+\setlength{\wbtemplengthb}{0pt}
+\newlength{\wbtemplengthc}
+\setlength{\wbtemplengthc}{0pt}
+\newlength{\wbtemplengthd}
+\setlength{\wbtemplengthd}{0pt}
+\newlength{\wbtemplengthe}
+\setlength{\wbtemplengthe}{0pt}
+\newcount\wbtempcounta
+\wbtempcounta=0
+\newcount\wbtempcountb
+\wbtempcountb=0
+\newcount\wbtempcountc
+\wbtempcountc=0
+
+\newcommand{\CPPAuthorsTemplate}[4]{
+\LaTeXZeroBoxTemplate{
+The following people are authors to this book:
+
+#3
+
+You can verify who has contributed to this book by examining the history logs at Wikibooks (http://en.wikibooks.org/).
+
+Acknowledgment is given for using some contents from other works like #1, as from the authors #2.
+
+The above authors release their work under the following license:
+
+This work is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. In short: you are free to share and to make derivatives of this work under the conditions that you appropriately attribute it, and that you only distribute it under the same, similar or a compatible license. Any of the above conditions can be waived if you get permission from the copyright holder.
+Unless otherwise noted, #4 used in this book have their own copyright, may use different licenses than the one used here, and were not created by the above authors. The authors, contributors, and licenses used should be acknowledged separately.}
+}
+
+\newcommand{\NFFallunterscheidung}[8]{
+{\bfseries Fall 1:} #1 \\
+#2 \\
+{\bfseries Fall 2:} #3 \\
+#4 \\
+{\bfseries Fall 3:} #5 \\
+#6 \\
+{\bfseries Fall 4:} #7 \\
+#8 \\
+}
+
+\newcommand{\NFAufgabe}[2]{
+{\bfseries Aufgabe:}\\
+#1 \\
+{\bfseries Lösung:}\\
+#2 \\
+}
+
+\newcommand{\tlTemplate}[1]{{\{\{{\ttfamily #1}\}\}}}
+
+\newcommand{\LaTeXQuelleLink}[3]{(#1 #2 #3)}
+
+
+\newcommand{\matrixdimTemplate}[1]{
+\definecolor{shadecolor}{gray}{0.9}
+\begin{myshaded}
+{\bfseries Matrix Dimensions: }\\
+A: $p \times p$ \\
+B:  $p \times q$\\
+C:  $r \times p$\\
+D:  $r \times q$\\
+\end{myshaded}
+}
+
+\newcommand{\matlabTemplate}[1]{
+\definecolor{shadecolor}{gray}{0.9}
+\begin{myshaded}
+This operation can be performed using this MATLAB command:
+{\ttfamily #1}
+\end{myshaded}}
+
+\newcommand{\PrintUnitPage}[3]{\pagebreak
+\begin{flushleft}
+{\bfseries \Large #1}
+\end{flushleft}
+
+\begin{longtable}{>{\RaggedRight}p{0.5\linewidth}>{\RaggedRight}p{0.5\linewidth}}
+& #2
+\end{longtable}}
+
+\newcommand{\LaTeXCodeTipTemplate}[3]{
+
+\definecolor{shadecolor}{gray}{0.9}
+\begin{myshaded}
+#1 \\
+#2 \\
+#3
+\end{myshaded}
+}
+
+\newcommand{\DisassemblySyntax}[1]{
+
+\definecolor{shadecolor}{gray}{0.9}
+\begin{myshaded}
+This code example uses #1 Syntax
+\end{myshaded}}
+
+
+\newcommand{\LaTeXDeutschTemplate}[1]{ {\bfseries deutsch:} #1 }
+
+
+
+\newcommand{\LaTeXNullTemplate}[1]{}
+\newcommand{\LaTeXEquals}[1]{=}
+
+\newcommand{\LatexSymbol}[1]{\LaTeX}
+
+\newcommand{\LaTeXDoubleBoxTemplate}[2]{
+
+\begin{minipage}{\linewidth}\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries #1} \\
+#2
+\end{myshaded}
+\end{minipage}
+
+}
+
+\newcommand{\NFHinweis}[1]{
+
+\begin{minipage}{\linewidth}\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{
+\begin{flushleft}
+\begin{Large}
+{\Huge \textcircled{\LARGE !}} \ Hinweis
+\end{Large}
+\end{flushleft}}
+\medskip
+#1
+\end{myshaded}
+\end{minipage}
+
+}
+
+\newcommand{\LaTeXSimpleBoxTemplate}[2]{
+{\bfseries #1} \\
+#2
+}
+
+\newcommand{\SolutionBoxTemplate}[2]{
+#2
+}
+
+
+\newcommand{\LaTeXDoubleBoxOpenTemplate}[2]{
+
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries #1} \\
+#2
+\end{myshaded}
+
+}
+
+%\newcommand{\LaTeXDoubleBoxOpenTemplate}[2]{
+
+%\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries #1} \\
+%#2
+%\end{myshaded}
+
+%}
+
+\newcommand{\Loesungsweg}[2]{
+
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries Wie kommt man auf den Beweis? #1} \\
+#2
+\end{myshaded}
+
+}
+
+
+\newcommand{\LaTeXInduktion}[6]{
+
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries Aussageform, deren Allgemeingültigkeit für #1 bewiesen werden soll:} \\
+#2
+{\newline \bfseries 1. Induktionsanfang}
+#3
+{\newline \bfseries 2. Induktionsschritt}
+{\newline \bfseries 2a. Induktionsvoraussetzung}
+#4
+{\newline \bfseries 2b. Induktionsbehauptung}
+#5
+{\newline \bfseries 2c. Beweis des Induktionsschritts}
+#6
+\end{myshaded}
+
+}
+
+\newcommand{\LaTeXLatinExcerciseTemplate}[3]{
+
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries Excercise: #1} \\
+#2 \\
+{\bfseries Solution}
+#3
+\end{myshaded}
+
+}
+
+
+\newcommand{\LaTeXShadedColorBoxTemplate}[2]{
+{\linewidth}#1\begin{myshaded}
+#2
+\end{myshaded}
+}
+
+\newcommand{\PGP}[1]{PGP:#1}
+
+
+\newcommand{\DETAILS}[1]{For more details on this topic, see #1}
+
+\newcommand{\ADAFile}[1]{\LaTeXZeroBoxTemplate{File: #1}}
+\newcommand{\ADASample}[1]{\LaTeXZeroBoxTemplate{This code sample is also available in #1}}
+
+
+\newcommand{\LaTeXZeroBoxTemplate}[1]{
+\begin{minipage}{\linewidth}\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}
+#1
+\end{myshaded}
+\end{minipage}
+}
+
+\newcommand{\LaTeXZeroBoxOpenTemplate}[1]{
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}
+#1
+\end{myshaded}
+}
+
+\newcommand{\PDFLink}[1]{
+\textbf{PDF} #1
+}
+
+\newcommand{\Lysippos}[1]{Lysippos}
+
+
+\newcommand{\SonnensystemFakten}[3]{
+#1 \\
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\bfseries #2}  \\
+#3 \\
+\end{myshaded}
+}
+
+
+\newcommand{\VorlageReferenzenEintrag}[3]{
+\begin{longtable}{p{0.2\linewidth}p{0.8\linewidth}}
+
+{[\bfseries #1]} & {\itshape #2} #3 \\
+\end{longtable}
+
+}
+
+\newcommand{\MBOX}[2]{\definecolor{shadecolor}{gray}{0.9}
+\begin{myshaded}
+\begin{longtable}{p{0.2\linewidth}p{0.7\linewidth}}
+#1 & #2 \\
+\end{longtable}
+\end{myshaded}}
+
+
+
+\newcommand{\LaTeXIdentityTemplate}[1]{#1
+}
+\newcommand{\Doppellizenz}[1]{Dieser Text ist sowohl unter GFDL als auch CC BY-SA 3.0 lizenziert. Wenn der Text unter CC BY-SA 3.0 genutzt wird, kann entsprechend Abschnitt 4b als Autor „Wikibooks“ genannt werden.}
+
+\newcommand{\AdaRM}[3]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1-#2.html}{#1.#2 #3}}
+
+\newcommand{\AdaEightThreeRM}[2]{\myfnhref{http://archive.adaic.com/standards/83lrm/html/lrm-#1.html}{Annex #1: #2}}
+
+\newcommand{\AdaRMThree}[4]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1-#2-#3.html}{#1.#2.#3 #4}}
+
+\newcommand{\AdaRMAThree}[4]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1-#2-#3.html}{Annex #1.#2.#3 #4}}
+
+\newcommand{\AdaRMATwo}[3]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1-#2.html}{Annex #1.#2 #3}}
+
+
+
+
+
+\newcommand{\AdaNiveFiveRMThree}[4]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95lrm/ARM_HTML/RM-#1-#2-#3.html}{#1.#2.#3 #4}}
+
+
+\newcommand{\AdaSGThree}[4]{\myfnhref{http://www.adaic.org/resources/add_content/docs/95style/html/sec_#1/#1-#2-#3.html}{#1.#2.#3 #4}}
+
+\newcommand{\AdaSGTwo}[3]{\myfnhref{http://www.adaic.org/resources/add_content/docs/95style/html/sec_#1/#1-#2.html}{#1.#2 #3}}
+
+
+\newcommand{\AdaSGOne}[2]{\myfnhref{http://www.adaic.org/resources/add_content/docs/95style/html/sec_#1/}{Chapter #1: #2}}
+
+
+
+\newcommand{\AdaRMNineFive}[3]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95lrm/ARM_HTML/RM-#1-#2.html}{#1.#2 #3}}
+
+
+\newcommand{\AdaRMCiteFive}[7]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1-#2-#3.html}{ISO/IEC 8652:2007. #1.#2.#3 #4 (#5). Ada 2005 Reference Manual. #7 }}
+
+
+\newcommand{\AdaTwentyZeroFive}[1]{{\itshape This language feature is only available in Ada 2005}}
+
+\newcommand{\ADANFAI}[2]{\myfnhref{http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00#1.TXT}{AI95-00#1-01 #2}}
+
+\newcommand{\ADARMAONE}[2]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1.html}{Annex #1 #2}}
+
+\newcommand{\ADARMONE}[2]{\myfnhref{http://www.adaic.org/resources/add_content/standards/05rm/html/RM-#1.html}{Section #1: #2}}
+\newcommand{\ADANiveFiveRMONE}[2]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95lrm/ARM_HTML/RM-#1.html}{Section #1: #2}}
+
+\newcommand{\AdaNiveFiveRMAThree}[4]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95lrm/ARM_HTML/RM-#1-#2-#3.html}{Annex #1.#2-#3 #4}}
+
+\newcommand{\AdaNiveFiveRMATwo}[4]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95lrm/ARM_HTML/RM-#1-#2.html}{Annex #1.#2 #3}}
+
+\newcommand{\AdaNiveFiveR}[3]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95rat/rat95html/rat95-p#3-#1.html}{#1 #2}}
+
+\newcommand{\AdaNiveFiveRTwo}[4]{\myfnhref{http://www.adaic.org/resources/add_content/standards/95rat/rat95html/rat95-p#4-#1.html}{#1.#2 #3}}
+
+
+
+\newcommand{\AdaPragma}[1]{\LaTeXTTBF{pragma} }
+
+
+\newcommand{\yes}[1]{yes}
+\newcommand{\no}[1]{no}
+\newcommand{\BlenderRepo}[1]{\myfnhef{https://developer.blender.org/diffusion/B/browse/master/#1}{#1}}
+
+\newcommand{\TychoBrahe}[1]{Tycho Brahe}
+\newcommand{\BlenderAlignedView}[1]{This tutorial relies on objects being created so that they are aligned to the view that you’re looking through. Versions 2.48 and above have changed the way this works. Visit \myfnhref{https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Aligned_to_view_issue}{Aligned} to view issue to understand the settings that need to be changed.}
+
+\newcommand{\LaTeXPlainBoxTemplate}[1]{
+\begin{minipage}{\linewidth}\definecolor{shadecolor}{gray}{0.9}\begin{myshaded} 
+#1
+\end{myshaded}
+\end{minipage}
+}
+
+
+\newcommand{\Hinweis}[1]{
+\begin{TemplateInfo}{{\Huge \textcircled{\LARGE !}}}{Hinweis}
+#1
+\end{TemplateInfo}}
+
+
+
+\newcommand{\LaTexInfoTemplateOne}[1]{
+\begin{TemplateInfo}{\Info}{Information}
+#1
+\end{TemplateInfo}}
+
+\newcommand{\EqnTemplate}[1]{
+\begin{flushright}
+\textbf{[#1]}
+\end{flushright}}
+
+\newcommand{\RefTemplate}[1]{[#1]}
+
+
+\newcommand{\LaTeXGCCTakeTemplate}[1]{
+\LaTeXDoubleBoxTemplate{Take home:}{#1}
+}
+
+\newcommand{\LaTeXEditorNote}[1]{\LaTeXDoubleBoxTemplate{Editor's note}{#1}}
+
+\newcommand{\BNPForVersion}[1]{
+\LaTeXInfoTemplateOne{Applicable Blender version: #1}
+}
+
+\newcommand{\LaTeXInfoTemplateOne}[1]{
+\begin{TemplateInfo}{\Info}{Information}
+#1
+\end{TemplateInfo}
+}
+
+
+\newcommand{\LaTexHelpFulHintTemplate}[1]{
+\LaTeXDoubleBoxTemplate{Helpful Hint:}{#1}
+}
+
+\newcommand{\MyLaTeXTemplate}[3]{
+\LaTeXDoubleBoxTemplate{MyLaTeXTemplate1:}{#1 \\ #2 \\ #3}
+}
+
+\newcommand{\TemplatePreformat}[1]{
+\par
+\begin{scriptsize}
+%\setlength{\baselineskip}{0.9\baselineskip}
+\ttfamily
+#1
+\par
+\end{scriptsize}
+}
+
+\newcommand{\TemplateSpaceIndent}[1]{
+\begin{scriptsize}
+\begin{framed}
+\ttfamily
+#1
+\end{framed}
+\end{scriptsize}
+}
+
+\newcommand{\GenericColorBox}[2]
+{
+\newline
+\begin{tabular}[t]{p{0.6cm}p{4cm}}
+#1&#2\\  
+\end{tabular}
+}
+
+\newcommand{\legendNamedColorBox}[2]
+{
+  \GenericColorBox{
+    \parbox[t]{0.5\linewidth}{
+      \textsuperscript{
+        \fcolorbox{black}{#1}{
+          \Huge{\,\,}
+        }
+      }
+    }
+  }{
+    #2
+  } 
+}
+
+\newcommand{\legendColorBox}[2]
+{
+  \GenericColorBox{
+    \definecolor{tempColor}{rgb}{#1}
+    \parbox[t]{0.5\linewidth}{
+      \textsuperscript{
+        \fcolorbox{black}{tempColor}{
+           \Huge{\,\,}
+        }
+      }
+    }
+  }{
+    #2
+  } 
+}
+
+
+
+%\newcommand{\ubung} {{\LARGE $\triangleright$}}
+\newcommand{\ubung}{\ding{228} \textbf{Aufgabe:}\,}
+
+\newcommand{\TemplateSource}[1]
+{
+%\begin{TemplateCodeInside}{}{\baselineskip}{\baselineskip}{}{}{true}
+\begin{scriptsize}
+\begin{myshaded}\ttfamily
+#1
+\end{myshaded}
+\end{scriptsize}
+%\end{TemplateCodeInside}
+}
+
+
+\newenvironment{TemplateInfo}[2]
+% no more parameters
+%****************************************************
+% Template Info
+% Kasten mit Logo, Titelzeile, Text
+% kann für folgende Wiki-Vorlagen benutzt werden:
+%          Vorlage:merke, Vorlage:Achtung u.ä.
+%
+% #1 Logo  (optional) default: \Info
+% #2 Titel (optional) default: Information; könnte theoretisch auch leer sein,
+%                     das ist aber wegen des Logos nicht sinnvoll
+%****************************************************
+{
+% Definition des Kastens mit Standardwerten
+% u.U. ist linewidth=1pt erorderlich
+\begin{framed}
+% linksbündig ist besser, weil es in der Regel wenige Zeilen sind, die teilweise kurz sind
+\begin{flushleft}
+% Überschrift größer darstellen
+\begin{Large}
+% #1 wird als Logo verwendet, Vorgabe ist \Info aus marvosym
+%    für andere Logos muss ggf. das Package eingebunden werden
+%    das Logo kann auch mit einer Größe verbunden werden, z.B. \LARGE\danger als #1
+{#1 } \
+% #2 wird als Titelzeile verwendet, Vorgabe ist 'Information'
+{\bfseries #2}
+\medskip \end{Large} \\
+} % Ende der begin-Anweisungen, es folgenden die end-Anweisungen
+{ \end{flushleft}\end{framed} }
+
+
+\newcommand{\TemplateHeaderExercise}[3]
+% no more parameters
+%****************************************************
+% Template Header Exercise
+% Rahmen als minisec mit Nummer der Aufgabe und Titel und grauem Hintergrund
+% ist gedacht für folgende Wiki-Vorlage:
+%          Vorlage:Übung4
+% kann genauso für den Aufgaben-Teil folgender Vorlagen verwendet werden:
+%          Vorlage:Übung    (wird zz. nur einmal benutzt)
+%          Vorlage:Übung2   (wird zz. gar nicht benutzt)
+%          Vorlage:Übung3   (wird zz. in 2 Büchern häufig benutzt)
+%          C++-Programmierung/ Vorlage:Aufgabe  (wird zz. nur selten benutzt,
+%                            ist in LatexRenderer.hs schon erledigt)
+%
+% #1 Text   (optional) 'Aufgabe' oder 'Übung', kann auch leer sein
+% #2 Nummer (Pflicht)  könnte theoretisch auch leer sein, aber dann sieht die Zeile
+%                      seltsam aus; oder die if-Abfragen wären unnötig komplex
+% #3 Titel  (optional) Inhaltsangabe der Aufgabe, kann auch leer sein
+%****************************************************
+{
+\minisec{\normalfont \fcolorbox{black}{shadecolor}{\large \, #1 #2 \ifx{#3}{}{}\else{-- #3}\fi \,} \medskip }
+}
+ 
+\newcommand{\TemplateHeaderSolution}[3]
+% no more parameters
+%****************************************************
+% Template Header Solution
+% Rahmen als minisec mit Nummer der Aufgabe und Titel und grauem Hintergrund
+%
+% ist gedacht für den Lösungen-Teil der Vorlagen und wird genauso
+% verwendet wie \TemplateHeaderExercise
+%****************************************************
+{
+\minisec{\normalfont \fcolorbox{black}{shadecolor}{\large \, Lösung zu #1 #2 \ifx{#3}{}{}\else{-- #3}\fi \,} \medskip }
+}
+
+\newcommand{\TemplateUbungDrei}[4]
+{
+\TemplateHeaderExercise{Übung}{#1}{#2}
+#3
+\TemplateHeaderSolution{Übung}{#1}{#2}
+#4
+}
+
+\newcommand{\Mywrapfigure}[2]
+{
+\begin{wrapfigure}{r}{#1\textwidth}
+\begin{center}
+#2
+\end{center}
+\end{wrapfigure}
+}
+
+
+
+\newcommand{\Mymakebox}[2]
+{
+\begin{minipage}{#1\textwidth}
+#2
+\end{minipage}
+}
+
+\newcommand{\MyBlau}[1]{
+\textcolor{darkblue}{#1}
+} 
+\newcommand{\MyRot}[1]{
+\textcolor{red}{#1}
+} 
+\newcommand{\MyGrun}[1]{
+\textcolor{mydarkgreen}{#1}
+} 
+\newcommand{\MyBg}[2]{
+\fcolorbox{#1}{#1}{#2} 
+} 
+
+\newcommand{\BNPModule}[1]{
+the "#1" module
+} 
+
+
+\newcommand{\LaTeXMerkeZweiTemplate}[1]{\LaTeXDoubleBoxTemplate{Merke}{#1}}
+
+\newcommand{\LaTeXDefinitionTemplate}[1]{\LaTeXDoubleBoxTemplate{Definition}{#1}}
+
+\newcommand{\LaTeXAnorganischeChemieFuerSchuelerVorlageMerksatzTemplate}[1]{\LaTeXDoubleBoxTemplate{Merksatz}{#1}}
+
+\newcommand{\LaTeXTextTemplate}[1]{\LaTeXDoubleBoxTemplate{}{#1}}
+
+\newcommand{\LaTeXExampleTemplate}[1]{\LaTeXDoubleBoxTemplate{Example:}{#1}}
+\newcommand{\HaskellExampleTemplate}[2]{\LaTeXDoubleBoxTemplate{Example: #1}{#2}}
+
+\newcommand{\LaTeXexampleTemplate}[1]{\LaTeXDoubleBoxTemplate{Example:}{#1}}
+
+\newcommand{\LaTeXPTPBoxTemplate}[1]{\LaTeXDoubleBoxTemplate{Points to ponder:}{#1}}
+
+\newcommand{\LaTeXNOTETemplate}[2]{\LaTeXDoubleBoxTemplate{Note:}{#1 #2}}
+
+\newcommand{\LaTeXNotizTemplate}[1]{\LaTeXDoubleBoxTemplate{Notiz:}{#1}}
+
+\newcommand{\LaTeXbodynoteTemplate}[1]{\LaTeXDoubleBoxTemplate{Note:}{#1}}
+
+\newcommand{\DarcsPatchProperty}[1]{\LaTeXDoubleBoxTemplate{Patch property:}{#1}}
+
+
+
+\newcommand{\LaTeXecebcite}[1]{\textsuperscript{[#1]}}
+
+\newcommand{\LaTeXmainpage}[1]{{\itshape Main Page: #1}}
+\newcommand{\LaTeXAsof}[1]{As of #1}
+\newcommand{\LaTeXasof}[1]{as of #1}
+
+
+\newcommand{\LaTeXAPDIPpreface}[1]{
+Roberto R. Romulo \newline
+Chairman (2000-2002) \newline
+e-ASEAN Task Force \newline
+Manila, Philippines \newline
+$\text{ }$\newline
+Shahid Akhtar \newline
+Program Coordinator\newline 
+UNDP-APDIP \newline
+Kuala Lumpur, Malaysia\newline 
+http://www.apdip.net\newline}
+
+
+\newcommand{\LaTeXcquoteTemplate}[1]{\LaTeXDoubleBoxTemplate{Quote:}{#1}}
+
+\newcommand{\LaTeXCquoteTemplate}[1]{\LaTeXDoubleBoxTemplate{Quote:}{#1}}
+
+\newcommand{\LaTeXSideNoteTemplate}[1]{\LaTeXDoubleBoxTemplate{Note:}{#1}}
+
+\newcommand{\LaTeXsideNoteTemplate}[1]{\LaTeXDoubleBoxTemplate{Note:}{#1}}
+
+\newcommand{\LaTeXExercisesTemplate}[1]{\LaTeXDoubleBoxTemplate{Exercises:}{#1}}
+
+\newcommand{\LaTeXCppProgrammierungVorlageTippTemplate}[1]{\LaTeXDoubleBoxTemplate{Tip}{#1}}
+
+\newcommand{\LaTeXTipTemplate}[1]{\LaTeXDoubleBoxTemplate{Tip}{#1}}
+\newcommand{\LaTeXUnknownTemplate}[1]{unknown}
+
+\newcommand{\LaTeXCppProgrammierungVorlageHinweisTemplate}[1]{\LaTeXDoubleBoxTemplate{Hinweis}{#1}}
+
+\newcommand{\LaTeXCppProgrammierungVorlageSpaeterImBuchTemplate}[1]{\LaTeXDoubleBoxTemplate{Thema wird später näher erläutert...}{#1}}
+
+\newcommand{\SGreen}[1]{This page uses material from Dr. Sheldon Green's Hypertext Help with LaTeX.}
+\newcommand{\ARoberts}[1]{This page uses material from Andy Roberts' Getting to grips with LaTeX with permission from the author.}
+
+\newcommand{\LaTeXCppProgrammierungVorlageAnderesBuchTemplate}[1]{\LaTeXDoubleBoxTemplate{Buchempfehlung}{#1}}
+
+\newcommand{\LaTeXCppProgrammierungVorlageNichtNaeherBeschriebenTemplate}[1]{\LaTeXDoubleBoxTemplate{Nicht Thema dieses Buches...}{#1}}
+
+\newcommand{\LaTeXPythonUnterLinuxVorlagenVorlageDetailsTemplate}[1]{\LaTeXDoubleBoxTemplate{Details}{#1}}
+
+\newcommand{\LaTeXChapterTemplate}[1]{\chapter{#1}
+\myminitoc
+}
+
+\newcommand{\Sample}[2]{
+\begin{longtable}{|p{\linewidth}|}
+\hline
+#1 \\ \hline
+#2 \\ \hline
+\end{longtable}
+}
+
+\newcommand{\Syntax}[1]{
+\LaTeXDoubleBoxTemplate{Syntax}{#1}}
+
+
+\newcommand{\LaTeXTT}[1]{{\ttfamily #1}}
+\newcommand{\LaTeXBF}[1]{{\bfseries #1}}
+\newcommand{\ADAPK}[3]{{#1.#2}}
+\newcommand{\LaTeXTTBF}[1]{{\bfseries \ttfamily #1}}
+\newcommand{\LaTeXIT}[1]{{\itshape #1}}
+\newcommand{\ADACOM}[1]{{\itshape -{}-#1}}
+
+\newcommand{\LaTeXCenter}[1]{
+\begin{center}
+#1
+\end{center}}
+
+
+\newcommand{\BNPManual}[2]{The Blender Manual page on #1 at \url{http://wiki.blender.org/index.php/Doc:Manual/#1}}
+\newcommand{\BNPWeb}[2]{#1 at \url{#2}}
+
+\newcommand{\Noframecenter}[2]{
+\begin{tablular}{p{\linewidth}}
+#2\\ 
+#1 
+\end{tabluar}
+}
+
+
+\newcommand{\LaTeXTTUlineTemplate}[1]{{\ttfamily \uline{#1}}
+}
+
+
+
+\newcommand{\PythonUnterLinuxDenulltails}[1]{
+\begin{tabular}{|p{\linewidth}|}\hline
+\textbf{Denulltails} \\ \hline
+#1 \\ \hline 
+\end{tabular}}
+
+\newcommand{\GNURTip}[1]{
+\begin{longtable}{|p{\linewidth}|}\hline
+\textbf{Tip} \\ \hline
+#1 \\ \hline 
+\end{longtable}}
+
+\newcommand{\PerlUebung}[1]{
+\begin{longtable}{|p{\linewidth}|}\hline
+#1 \\ \hline 
+\end{longtable}}
+
+\newcommand{\PerlNotiz}[1]{
+\begin{table}{|p{\linewidth}|}\hline
+#1 \\ \hline 
+\end{table}}
+
+\newcommand{\ACFSZusatz}[1]{\textbf{ Zusatzinformation }}
+\newcommand{\ACFSVorlageB}[1]{\textbf{ Beobachtung }}
+\newcommand{\ACFSVorlageV}[1]{\textbf{ Versuchsbeschreibung }}
+\newcommand{\TemplateHeaderSolutionUebung}[2]{\TemplateHeaderSolution{Übung}{#1}{#2}}
+\newcommand{\TemplateHeaderExerciseUebung}[2]{\TemplateHeaderExercise{Übung}{#1}{#2}}
+
+\newcommand{\ChemTemplate}[9]{\texttt{     
+#1#2#3#4#5#6#7#8#9}}
+
+\newcommand{\QED}[1]{\square}
+
+\newcommand{\WaningTemplate}[1]{     
+\begin{TemplateInfo}{\danger}{Warning}
+#1
+\end{TemplateInfo}}
+
+
+\newcommand{\WarnungTemplate}[1]{     
+\begin{TemplateInfo}{\danger}{Warnung}
+#1
+\end{TemplateInfo}}
+
+
+\newcommand{\BlenderAlignedToViewIssue}[1]{     
+\begin{TemplateInfo}{\danger}{Blender3d Aligned to view issue}
+This tutorial relies on objects being created so that they are aligned to the view that you’re looking through. Versions 2.48 and above have changed the way this works. Visit Aligned (\url{http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Aligned_to_view_issue}) to view issue to understand the settings that need to be changed.
+\end{TemplateInfo}}
+
+
+\newcommand{\BlenderVersion}[1]{     
+{\itshape Diese Seite bezieht sich auf }{\bfseries \quad Blender Version #1}}
+
+\newcommand{\Literal}[1]{{\itshape #1}}
+
+\newcommand{\JavaIllustration}[3]{
+\begin{tablular}
+{Figure #1: #2}
+\\
+#3
+\end{ltablular}
+}
+
+
+\newcommand{\Ja}[1]{\Checkmark {\bfseries Ja}}
+\newcommand{\Nein}[1]{\XSolidBrush {\bfseries Nein}}
+
+\newcommand{\SVGVersions}[8]{
+{\scriptsize
+\begin{tabular}{|p{0.45\linewidth}|p{0.13\linewidth}|}\hline
+Squiggle (Batik) & #1 \\ \hline
+Opera (Presto) & #2 \\ \hline
+Firefox (Gecko; auch SeaMonkey, Iceape, Iceweasel etc) & #3 \\ \hline
+Konqueror (KSVG) & #4 \\ \hline
+Safari (Webkit) & #5 \\ \hline
+Chrome (Webkit) & #6 \\ \hline
+Microsoft Internet Explorer (Trident) & #7 \\ \hline
+librsvg & #8 \\\hline
+\end{tabular}}
+
+}
+
+
+\theoremstyle{plain}
+\newtheorem{satz}{Satz}
+\newtheorem{beweis}{Beweis}
+\newtheorem{beispiel}{Beispiel}
+
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+
+\newcommand{\NFSatz}[2]{\begin{satz}#1\end{satz}#2}
+
+\newcommand{\NFDef}[2]{\begin{mydef}#1\end{mydef}#2}
+
+\newcommand{\NFBeweis}[2]{\begin{beweis}#1\end{beweis}#2}
+
+\newcommand{\NFBeweisschritt}[2]{{\bfseries Beweisschritt} #1 \\ #2}
+
+%\newcommand{\Smiley}[1]{$\ddot\smile$}
+
+
+\newcommand{\NFBeispiel}[2]{\begin{beweis}#1\end{beweis}#2}
+
+\newcommand{\NFFrage}[3]{
+
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\itshape \uline{#1}: #2} \\
+#3
+\end{myshaded}
+
+}
+
+\newcommand{\NFFrageB}[2]{
+
+\definecolor{shadecolor}{gray}{0.9}\begin{myshaded}{\itshape \uline{Frage}: #1} \\
+#2
+\end{myshaded}
+
+}
+
+
+\newcommand{\NFVertiefung}[1]{
+{\bfseries Vertiefung:} \\
+Der Inhalt des folgenden Abschnitts ist eine Vertiefung des Stoffes. Für die nächsten Kapitel ist es nicht notwendig, dass du dieses Kapitel gelesen hast.
+
+}

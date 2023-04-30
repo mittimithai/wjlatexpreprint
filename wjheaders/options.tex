@@ -1,0 +1,145 @@
+% Festlegungen für minitoc
+% \renewcommand{\myminitoc}{\minitoc}
+% \renewcommand{\mtctitle}{Überblick}
+% \setcounter{minitocdepth}{1}
+% \dominitoc   % diese Zeile aktiviert das Erstellen der minitocs, sie muss vor \tableofcontents kommen
+
+% Seitenformat
+% ------------
+%\KOMAoption{paper}{A5}          % zulässig: letter, legal, executive; A-, B-, C-, D-Reihen
+%\KOMAoption{open}{right}			% zulässig: right (jedes Kapitel beginnt rechts), left, any
+\KOMAoption{numbers}{auto}
+% Satzspiegel jetzt neu berechnen, damit er bei Kopf- und Fußzeilen beachtet wird
+\KOMAoptions{DIV=13}
+
+% Kopf- und Fusszeilen
+% --------------------
+% Breite und Trennlinie
+%\setheadwidth[-6mm]{textwithmarginpar}
+%\setheadsepline[textwithmarginpar]{0.4pt}
+\setheadwidth{text}
+%\setheadsepline[text]{0.4pt}
+
+% header and footer
+\clearpairofpagestyles
+
+\ihead {\includegraphics[width=0.15in,keepaspectratio]{../headers/headerimgs/oa_logo.\SVGExtension}
+\includegraphics[width=0.15in,keepaspectratio]{../headers/headerimgs/cc_logo.\SVGExtension}
+}
+
+\ohead{
+\tiny
+\begin{tabular}[b]{r}
+        \wjtitle{} \\
+        \wjdoi{} \\
+        \wjarticletype{}
+        \end{tabular}
+\includegraphics[width=0.3in,keepaspectratio]{../headers/headerimgs/wjmed/wjm_logo.\SVGExtension}
+}        
+\cfoot*{\pagemark}
+
+
+\setfootsepline[0.5\textwidth]{0.4pt}
+
+
+\cfoot{}
+\renewcommand\pagemark{{\textbf{\thepage}\ of \textbf{\pageref{LastPage}}}}
+\ifoot[\pagemark]{\pagemark{} | \wjjournal}
+\setkomafont{pagefoot}{\normalfont\normalcolor}
+
+
+
+
+% Variante 2: Kopf außen die Seitenzahl, Fuß nichts
+%\ohead{\pagemark}
+%\ofoot{}
+
+
+
+% Standardschriften
+% -----------------
+%\KOMAoption{fontsize}{18pt}
+%\addtokomafont{disposition}{\rmfamily}
+%\setkomafont{title}{\sffamily} 
+%\setkomafont{pageheadfoot}{\normalfont\rmfamily\mdseries}
+%\renewcommand*\familydefault{\sfdefault} % Only if the base font of the document is to be sans serif
+
+% vertikaler Ausgleich
+% -------------------- 
+% nein -> \raggedbottom
+% ja   -> \flushbottom    aber ungeeignet bei Fußnoten
+%\raggedbottom
+\flushbottom
+
+% Tiefe des Inhaltsverzeichnisses bestimmen
+% -----------------------------------------
+% -1   nur \part{}
+%  0   bis \chapter{}
+%  1   bis \section{}
+%  2   bis \subsection{} usw.
+\newcommand{\mytocdepth}{1}
+
+% mypart - Teile des Buches und Inhaltsverzeichnis
+% ------------------------------------------------
+% Standard: nur im Inhaltsverzeichnis, zusätzlicher Eintrag ohne Seitenzahl
+% Variante: nur im Inhaltsverzeichnis, zusätzlicher Eintrag mit Seitenzahl 
+%\renewcommand{\mypart}[1]{\addcontentsline{toc}{part}{#1}}
+% Variante: mit eigener Seite vor dem ersten Kapitel, mit Eintrag und Seitenzahl im Inhaltsverzeichnis
+\renewcommand{\mypart}[1]{\part{#1}}
+
+
+% maketitle
+% -----------------------------------------------
+% Bestandteile des Innentitels
+%\title{Einführung in SQL}
+%\author{Jürgen Thomas}
+%\subtitle{Datenbanken bearbeiten}
+%\author{INSERT AUTHOR NAMES}
+%\author{Maxim G. Masiutin, Maneesh K. Yadav}
+%\author{Maxim G. Masiutin \and Maneesh K. Yadav}
+          
+\date{}
+% Bestandteile von Impressum und CR
+% Bestandteile von Impressum und CR
+
+\uppertitleback{
+%Detaillierte Daten zu dieser Publikation sind bei Wikibooks zu erhalten:\newline{} \url{http://de.wikibooks.org/}
+%Diese Publikation ist bei der Deutschen Nationalbibliothek registriert. Detaillierte Daten sind im Internet  zu erhalten: \newline{}\url{https://portal.d-nb.de/opac.htm?method=showSearchForm#top}
+%Diese Publikation ist bei der Deutschen Nationalbibliothek registriert. Detaillierte Daten sind im Internet unter der Katalog-Nr. 1008575860 zu erhalten: \newline{}\url{http://d-nb.info/1008575860}
+
+%Namen von Programmen und Produkten sowie sonstige Angaben sind häufig geschützt. Da es auch freie Bezeichnungen gibt, wird das Symbol \textregistered{} nicht verwendet.
+
+%Erstellt am 
+\today{}
+}
+
+\lowertitleback{
+{\footnotesize
+On the 28th of April 2012 the contents of the English as well as German Wikibooks and Wikipedia projects were licensed under Creative Commons Attribution-ShareAlike 3.0 Unported license.
+A URI to this license is given in the list of figures on page \pageref{ListOfFigures}.
+If this document is a derived work from the contents of one of these projects and the content was still licensed by the project under this license at the time of derivation this document has to be licensed under the same, a similar or a compatible license, as stated in section 4b of the license.
+The list of contributors is included in chapter Contributors on page \pageref{Contributors}.
+The licenses GPL, LGPL and GFDL are included in chapter Licenses on page \pageref{Licenses}, since this book and/or parts of it may or may not be licensed under one or more of these licenses, and thus require inclusion of these licenses.
+The licenses of the figures are given in the list of figures on page \pageref{ListOfFigures}.
+This PDF was generated by the \LaTeX{} typesetting  software.
+The \LaTeX{} source code is included as an attachment ({\tt source.7z.txt}) in this PDF file.
+To extract the source from the PDF file, you can use the \texttt{pdfdetach} tool
+including in the \texttt{poppler} suite, or the
+\url{http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/} utility.
+Some PDF viewers may also let you save the attachment to a file.
+After extracting it from the PDF file you have to rename it to {\tt source.7z}.
+To uncompress the resulting archive we recommend the use of \url{http://www.7-zip.org/}.
+The \LaTeX{} source itself was generated by a program written by Dirk Hünniger, which is freely available under an open source license from \url{http://de.wikibooks.org/wiki/Benutzer:Dirk_Huenniger/wb2pdf}.
+}}
+
+
+\renewcommand{\mysubtitle}[1]{}
+\renewcommand{\mymaintitle}[1]{}
+\renewcommand{\myauthor}[1]{}
+
+
+\newenvironment{myshaded}{%
+  \def\FrameCommand{ \hskip-2pt \fboxsep=\FrameSep \colorbox{shadecolor}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
