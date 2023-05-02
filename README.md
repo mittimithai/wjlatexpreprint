@@ -62,7 +62,5 @@ You can compile the latex by going inside main and the running latex, you need x
 	\raggedright{}\myfigurewithcaption{A caption}
 	\end{minipage}
 
-Watch for `\item{} \newline` in the Reference sections that come from URL cites, just delete the newline.
-
 ## TODO
 Font paths needs to be fixed to not be ubuntu specific, I think it will then be possible to compile the latex source on mac.
