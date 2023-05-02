@@ -3,29 +3,32 @@
 ## Install
 Use the following to install wikimedia2latex on a linux machine (this won't work on Mac). NOTE: You generally need a machine with 8GB of RAM, you can get opaque problems like "process killed" with haskell otherwise.
 
-	apt-get update
-	apt-get install -y tzdata keyboard-configuration make
-	apt-get install -y ghc libghc-x509-dev libghc-pem-dev
-	apt-get install -y libghc-regex-compat-dev libghc-http-dev cabal-install libghc-hxt-dev
-	apt-get install -y libghc-split-dev libghc-blaze-html-dev libghc-file-embed-dev
-	apt-get install -y libghc-highlighting-kate-dev  libghc-hxt-http-dev libghc-regex-pcre-dev
-	apt-get install -y libghc-temporary-dev libghc-url-dev libghc-utf8-string-dev
-	apt-get install -y libghc-utility-ht-dev libghc-http-conduit-dev libghc-happstack-server-dev
-	apt-get install -y libghc-directory-tree-dev libghc-zip-archive-dev libghc-strict-dev
-	apt-get install -y libghc-network-uri-dev libghc-tagsoup-dev libghc-word8-dev
-	apt-get install -y ghostscript calibre latex2rtf libreoffice git
-	apt-get install -y librsvg2-bin imagemagick
-	apt-get install -y  fonts-freefont-ttf texlive-xetex texlive-latex-recommended
-	apt-get install -y  texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
-	apt-get install -y  cm-super-minimal texlive-lang-all poppler-utils
-	apt-get install -y  lmodern texlive-plain-generic latex-cjk-common
-	apt-get install -y  fonts-cmu fonts-wqy-zenhei
-	apt-get install -y  djvulibre-bin
-	apt-get install -y mediawiki2latex tzdata
-	apt-get install -y make
-	git clone https://git.code.sf.net/p/wb2pdf/git wb2pdf-git
-	make -C wb2pdf-git
-	make -C wb2pdf-git install
+```
+sudo apt-get update
+sudo apt-get install -y \
+ cabal-install calibre cm-super-minimal djvulibre-bin \
+ fonts-cmu fonts-freefont-ttf fonts-wqy-zenhei \
+ ghc ghostscript git \
+ imagemagick keyboard-configuration \
+ latex-cjk-common latex2rtf \
+ libghc-blaze-html-dev libghc-directory-tree-dev libghc-file-embed-dev \
+ libghc-happstack-server-dev libghc-highlighting-kate-dev \
+ libghc-http-conduit-dev libghc-http-dev libghc-hxt-dev \
+ libghc-hxt-http-dev libghc-network-uri-dev libghc-pem-dev \
+ libghc-regex-compat-dev libghc-regex-pcre-dev libghc-split-dev \
+ libghc-strict-dev libghc-tagsoup-dev libghc-temporary-dev \
+ libghc-url-dev libghc-utf8-string-dev libghc-utility-ht-dev \
+ libghc-word8-dev libghc-x509-dev libghc-zip-archive-dev \
+ libreoffice \
+ librsvg2-bin lmodern make mediawiki2latex poppler-utils \
+ texlive-fonts-extra texlive-fonts-recommended texlive-lang-all \
+ texlive-latex-extra texlive-latex-recommended texlive-plain-generic \
+ texlive-xetex \
+ tzdata
+git clone https://git.code.sf.net/p/wb2pdf/git wb2pdf-git
+make -C wb2pdf-git
+make -C wb2pdf-git install
+```
 
 `wikimedia2latex` should be in your path now.
 
