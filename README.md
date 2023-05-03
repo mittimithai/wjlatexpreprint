@@ -66,4 +66,4 @@ You can compile the latex by going inside main and the running latex, you need x
 	\end{minipage}
 
 ## TODO
-Font paths needs to be fixed to not be ubuntu specific, I think it will then be possible to compile the latex source on mac.
+Font paths needs to be fixed to not be ubuntu specific, I think it will then be possible to compile the latex source on mac. Greek letters do not show up with the CMU font in section headings, this is a well known thing, but we need a policy (e.g., using serif font for section headings) to avoid this problem which can easily slip by.
